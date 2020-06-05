@@ -2,7 +2,10 @@ import sys
 import time
 from room import Room
 from player import Player
-# from item import Item
+from item import Item
+from item import Condiment
+from item import Drink
+from item import Dessert
 from game_helpers import GameHelpers
 
 
@@ -30,7 +33,27 @@ room = {
     'treasure': treasure,
 }
 
-current = set()
+diet_coke = Drink("Diet", "A can of diet Coca Cola, that someone left behind.", -10)
+water = Drink("Water", "A half consumed smart water bottle.", 10)
+coke = Drink("Coke", "A can of Coca Cola.", 15)
+lemonade = Drink("Lemonade", "A full glass of pink lemonade you poured yourself earlier, but never drank.", 20)
+vegimite = Condiment("Vegimite", "One disgusting bottle of Vegimite.", -10)
+cheese = Condiment("Cheese", "Two slices of swiss cheese.", 10)
+mayo = Condiment("Mayo", "A squeeze bottle of of Hellman's Real Mayonnaise", 15)
+syrup = Condiment("Syrup", "A bottle of Aunt Jemima maple syrup", 20)
+oreos = Dessert("Oreos", "3/4th eaten package of oreos.", 5)
+cake = Dessert("Cake", "A partially eaten slice of cake, from your breakfast this morning.", 10)
+twinkie = Dessert("Twinkie", "Two individually wrapped Twinkies.", 15)
+candy = Dessert("Candy", "A completely unopened pack of Sour Patch Kids.", 20)
+items1 =[diet_coke, mayo, cake]
+items2 = [lemonade, oreos, cheese]
+items3 = [syrup, coke, vegimite]
+items4 = [water, twinkie, candy]
+
+room["outside"].items = items1
+room["foyer"].items = items2
+room["overlook"].items = items3
+room["narrow"].items = items4
 
 # Link rooms together
 
